@@ -12,8 +12,8 @@ from peche.dimpechear import DPA
 from peche.dimpecheas import DPAS
 from peche.dimpechecom import DPC
 from peche.dimpechefi import DPFI
-from peche.factpeche import factpeche
-from peche.models import DimPechTAAssurance, DimPechTACommerc, DimPechTAFinance, DimPechTransformArtisan, DimPecheArtisan, DimPecheAssure, DimPecheCommerce, DimPecheFinance, DimPecheInnovat, DimPecheTAInnovat, FactPeche
+
+from peche.models import DimPechTAAssurance, DimPechTACommerc, DimPechTAFinance, DimPechTransformArtisan, DimPecheArtisan, DimPecheAssure, DimPecheCommerce, DimPecheFinance, DimPecheInnovat, DimPecheTAInnovat
 
 # Create your views here.
 
@@ -43,7 +43,7 @@ def update_ar(request, id):
 
     context = {
 
-        'form': form,
+        'form': form
 
     }
     return render(request, 'peche/dimpecheart.html', context)
@@ -454,45 +454,18 @@ def de_fina(request, id):
 
 
 # pechetpech_fac
+def pcount(request):
 
-def pechfac(request):
-    if request.method == 'POST':
-        form = factpeche(request.POST)
-        if form.is_valid():
-            form.save()
-
-            messages.success(request, " Are Successfully Added !")
-            return redirect('/peche/pech_fac/')
-    else:
-        form = factpeche()
-        return render(request, 'peche/factpeche.html', {'form': form, 'dataObject': FactPeche.objects.all()})
-
-
-# update commm
-def up_fac(request, id):
-    dataOC = FactPeche.objects.get(id=id)
-    form = factpeche(instance=dataOC)
-    if request.method == 'POST':
-        form = factpeche(request.POST, instance=dataOC)
-        if form.is_valid():
-            form.save()
-            messages.success(request, " Are Successfully Added !")
-            return redirect('/peche/pech_fac/')
+    pfina = DimPecheFinance.objects.all().count()
+    peche = DimPecheArtisan.objects.all().count()
+    pcom = DimPecheCommerce.objects.all().count()
+    peino = DimPecheInnovat.objects.all().count()
 
     context = {
-
-        'form': form,
+        'peche': peche,
+        'pfina': pfina,
+        'peino': peino,
+        'pcom': pcom,
 
     }
-    return render(request, 'peche/factpeche.html', context)
-
-
-def de_fac(request, id):
-    dataOC = FactPeche.objects.get(id=id)
-    if request.method == 'POST':
-        dataOC.delete()
-        return redirect('/peche/pech_fac/')
-    context = {
-
-        'item': dataOC, }
-    return render(request, 'peche/delete_factpeche.html', context)
+    return render(request, 'peche/hm.html', context)

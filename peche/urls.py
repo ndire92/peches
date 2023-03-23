@@ -8,6 +8,7 @@ app_name = 'peche'
 
 
 urlpatterns = [
+    path('pch/', views.pcount, name='pch'),
     path('dimpecart/', views.pec_art, name='dimpecart'),
     path('dimpecass/', views.pech_assu, name='dimpecass'),
     path('dimpecec/', views.pech_ec, name='dimpecec'),
@@ -39,8 +40,6 @@ urlpatterns = [
     path('pech_tafina/', views.pechtafina, name='pech_tafina'),
     path('up_fi<int:id>/', views.up_fina, name='up_fi'),
     path('de_fi<int:id>/', views.de_fina, name='de_fi'),
-    path('pech_fac/', views.pechfac, name='pech_fac'),
-    path('up_fat<int:id>/', views.up_fac, name='up_fat'),
-    path('de_fat<int:id>/', views.de_fac, name='de_fat'),
+
 
 ]

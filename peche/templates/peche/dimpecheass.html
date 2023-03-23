@@ -16,51 +16,16 @@
 
                      {% include 'includes/messages.html' %}	
 
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Offreurs d’assurance Existant ou Non existant </label>
-                           {{ form.OffreAssureExistPech }}</div>
-                     </div>
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type d’assurance :</label>
-                           {{ form.TypeAssurancPech }}</div>
-                     </div>
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Besoins en formation (selon domaines):</label>
-                           {{ form.BesoinFormatPech }} </div>
-                     </div>
-                   <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Acteurs à la sensibilisation:</label>
-                           {{ form.ActeurSensibilisePech }}
-                          </div>
-                     </div>
-                    <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Acteurs à la formation:</label>
-                           {{ form.ActeurFormatPech }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Besoin en sensibilisation : </label>
-                           {{ form.BesoinSensibilisePech }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Contraintes globales sur la pêche </label>
-                           {{ form.ContraintGlobPech }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Contraintes majeures par filière :</label>
-                           {{ form.ContrainMajFilier}}
-                          </div>
-                     </div>				 	 
+                    
+                           
+                           {{ form.as_p}}
+               
+                   
+					
+					 
+					      
+                     
+                     
 		 
             </div>
                   
@@ -89,16 +54,24 @@
                   <table id="table_id" class="table table-hover table-center mb-0">
                      <thead>
                         <tr>
-                           <th>IdPechAssure_PK</th>
+                           <th>Id</th>
+                           <th>codeCommune</th>
+                           <th>nomCommune</th>
                            <th>OffreAssureExistPech</th>
                            <th>TypeAssurancPech</th>
+                           <th>NbreSouscripPech</th>
+                           <th>NbrePrimePech</th>
                            <th>BesoinFormatPech</th>
                            <th>ActeurSensibilisePech</th>
                            <th>ActeurFormatPech</th>
                            <th>BesoinSensibilisePech</th>
                            <th>ContraintGlobPech</th>
                            <th>ContrainMajFilier</th>
-                       
+                           <th>NbrInfrastruStokCondition</th>
+                           <th>NbrFourniEmblag</th>
+                           <th>NbrProdLabel</th>
+                           <th>Date Début</th>
+                           <th>Date de Modification</th>
                            <th class="text-right">Action</th>
                         </tr>
                      </thead>
@@ -106,23 +79,24 @@
                         {% for stud in dataObject %}
                         <tr>
                          
-                           <td>{{ stud.IdPechAssure_PK }}</td>
-						   
-                           <td>{{ stud.OffreAssureExistPech }}</td>
-
-                           <td>{{ stud.TypeAssurancPech }}</td>
-
-                           <td>{{ stud.BesoinFormatPech }}</td>
-
-                           <td>{{ stud.ActeurSensibilisePech }}</td>
-						   
-                           <td>{{ stud.ActeurFormatPech }}</td>
-						   
-                           <td>{{ stud.BesoinSensibilisePech }}</td>
-						   
-                           <td>{{ stud.ContraintGlobPech }}</td>
-						   
-                           <td>{{ stud.ContrainMajFilier }}</td>				
+                           <td>{{ stud.id}}</td>
+                           <td>{{ stud.codeCommune }}</td>	
+                           <td>{{ stud.nomCommune }}</td>	
+                           <td>{{ stud.OffreAssureExistPech }}</td>	
+                           <td>{{ stud.TypeAssurancPech }}</td>	
+                           <td>{{ stud.NbreSouscripPech }}</td>	
+                           <td>{{ stud.NbrePrimePech }}</td>	
+                           <td>{{ stud.BesoinFormatPech }}</td>	
+                           <td>{{ stud.ActeurSensibilisePech }}</td>	
+                           <td>{{ stud.ActeurFormatPech }}</td>	
+                           <td>{{ stud.BesoinSensibilisePech }}</td>	
+                           <td>{{ stud.ContraintGlobPech }}</td>	
+                           <td>{{ stud.ContrainMajFilier }}</td>	
+                           <td>{{ stud.NbrInfrastruStokCondition }}</td>	
+                           <td>{{ stud.NbrFourniEmblag }}</td>	
+                           <td>{{ stud.NbrProdLabel }}</td>	
+                           <td>{{ stud.date }}</td>
+                           <td>{{ stud.date_modification }}</td>		
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_ass' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -142,8 +116,7 @@
          </div>
       </div>
    </div>
-</div>
-   </div>
+
    
 </div>
 {% endblock %}	

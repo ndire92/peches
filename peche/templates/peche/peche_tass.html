@@ -15,7 +15,17 @@
                      </div>
 
                      {% include 'includes/messages.html' %}	
-
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Code Commune :</label>
+                           {{ form.codeCommune}}</div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Nom Commune</label>
+                           {{ form.nomCommune}}
+                        </div>
+                     </div>
                      <div class="col-sm-11">
                         <div class="form-group">
                            <label>Offreurs d’assurance Existant ou Non existant TA</label>
@@ -53,7 +63,19 @@
 					 <div class="col-sm-11">
                         
                      </div>				 	 
-		 
+                     <div class="col-sm-11">
+                        <div class="form-group">
+   
+                           <label>Date Début</label>
+                           {{ form.date}}
+                          </div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Date de Modification</label>
+                           {{ form.date_modification }}
+                          </div>
+                     </div>
             </div>
                   
                    <br>
@@ -82,7 +104,8 @@
                      <thead>
                         <tr>
                            <th>Id</th>
-                          
+                           <th>Code Commune</th>
+                           <th>Nom Commune</th>
                            <th>OffreAssurTA</th>
                            <th>TypAssurTA </th>
                         
@@ -90,6 +113,8 @@
                            <th>BesoinSensibilisePech</th>
                            <th>ContraintGlobPech</th>
                            <th>ContrainMajFilier</th>
+                           <th>Date Début</th>
+                           <th>Date de Modification</th>
                        
                            <th class="text-right">Action</th>
                         </tr>
@@ -98,6 +123,9 @@
                         {% for stud in dataObject %}
                         <tr>
                          <td>{{ stud.id}}</td>
+                         <td>{{ stud.codeCommune }}</td>
+
+                         <td>{{ stud.nomCommune }}</td>
                            <td>{{ stud.OffreAssurTA}}</td>
 						   
                            <td>{{ stud.TypAssurTA }}</td>
@@ -112,7 +140,8 @@
 						   
                            <td>{{ stud.ContrainMajFilierTA}}</td>
 						   
-                          				
+                           <td>{{ stud.date }}</td>
+                           <td>{{ stud.date_modification }}</td>
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_tassu' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -133,7 +162,5 @@
       </div>
    </div>
 </div>
-   </div>
-   
-</div>
+
 {% endblock %}	

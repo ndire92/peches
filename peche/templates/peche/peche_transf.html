@@ -15,57 +15,10 @@
                <form method="POST" action="" enctype="multipart/form-data">
                   {% csrf_token %}
                  
-                  <div class="row">
-                     <div class="col-md-6">
-                        
-                        <div class="form-group">
-                           <label>Act Transf Artisan:</label>
-                           {{ form.ActTransfArtisan }}
-                        </div>
-                        <div class="form-group">
-                           <label>Grpt Transformtr TA:</label>
-                           {{ form.GrptTransformtrTA  }}
-                        </div>
-                        <div class="form-group">
-                           <label>Type Service OffrGIE:</label>
-                           {{ form.TypServicOffrGIE }}
-                        </div>
-                        <div class="form-group">
-                          <label>Type Service OffrAssocia:</label>
-                          {{ form.TypServicOffrAssocia }}
-                       </div>
-                        <div class="form-group">
-                           <label>Type Service Offre OrgProf:</label>
-                           {{ form.TypServicOffrOrgProf }}
-                        </div>
-                        <div class="form-group">
-                           <label>Mat Equip Trans Exist:</label>
-                           {{ form.MatEquipTransExist }}
-                        </div>
-                        <div class="form-group">
-                           <label>Type Prod Transf Period:</label>
-                           {{ form.TypProdTransfPeriod }}
-                        </div>
-                     </div>
-                     <div class="col-md-6">
-                        <div class="form-group">
-                           <label>Source Appro Intran MatTA:</label>
-                           {{ form.SourcApproIntranMatTA}}
-                        </div>
-                        <div class="form-group">
-                           <label>Qte Prod PeriodTA:</label>
-                           {{ form.QteProdPeriodTA}}
-                        </div>
-                        <div class="form-group">
-                           <label>Qte Prod Type TA:</label>
-                           {{ form.QteProdTypeTA}}</div>
-                        <div class="form-group">
-                           <label>Taux Transform Artisan:</label>
-                           {{ form.TauxTransformArtisan }}
-                        </div>
-                  </div>
+                  {{ form.as_p }}
+                  
                   <div class="text-right">
-                     <button type="submit" class="btn btn-primary">Submit</button>
+                     <button type="submit" class="btn btn-primary">Ajouter</button>
                   </div>
                </form>
             </div>
@@ -73,12 +26,7 @@
       </div>
    </div>
    
-</div>
-
-
-     
-<div >
-  <div class="content container-fluid">
+ <div class="content container-fluid">
     <div class="page-header">
        <div class="row align-items-center">
           
@@ -94,40 +42,52 @@
                    <table id="table_id" class="table table-hover table-center mb-0">
                       <thead>
                          <tr>
+                           <tr>
+                             
                             <th>ID</th>
+                            <th>codeCommune</th>
+                            <th>nomCommune</th>
                             <th>ActTransfArtisan</th>
-                            <th> GrptTransformtrTA</th>
+                            <th>GrptTransformtrTA</th>
                             <th>TypServicOffrGIE</th>
                             <th>TypServicOffrAssocia</th>
                             <th>TypServicOffrOrgProf</th>
+                            <th>FourniIntranMatTrans</th>
+                            <th>SitTransform</th>
                             <th>MatEquipTransExist</th>
+                            
                             <th>TypProdTransfPeriod</th>
                             <th>SourcApproIntranMatTA</th>
                             <th>QteProdPeriodTA</th>
-                            <th> QteProdTypeTA</th>
+                            <th>QteProdTypeTA</th>
                             <th>TauxTransformArtisan</th>
+                            <th>Date Début</th>
+                            <th>Date de Modification</th>
                            <th class="text-right">Action</th>
                          </tr>
                       </thead>
                       <tbody>
                         {% for stud in dataObject %}
                          <tr>
-                          
-                            <td>{{ stud.id }}</td>
-                            <td>{{stud.ActTransfArtisan}}</td>
-
-                            <td>{{stud.GrptTransformtrTA}}</td>
-
-                            <td>{{ stud.TypServicOffrGIE }}</td>
-                            <td>{{ stud.TypServicOffrAssocia}}</td>
-
-                            <td>{{ stud.TypServicOffrOrgProf}}</td>
-                              <td>{{ stud.MatEquipTransExist}}</td>
-                            <td>{{ stud.TypProdTransfPeriod}}</td>
-                            <td>{{ stud.SourcApproIntranMatTA }}</td>
-                             <td>{{ stud.QteProdPeriodTA  }}</td>
-                             <td>{{ stud.QteProdTypeTA }}</td>
-                             <td>{{ stud.TauxTransformArtisan }}</td>
+                           <td>{{ stud.id }}</td>
+                           <td>{{ stud.codeCommune }}</td>
+                           <td>{{ stud.nomCommune }}</td>
+                           <td>{{ stud.ActTransfArtisan }}</td>
+                           <td>{{ stud.GrptTransformtrTA }}</td>
+                           <td>{{ stud.TypServicOffrGIE }}</td>
+                           <td>{{ stud.TypServicOffrAssocia }}</td>
+                           <td>{{ stud.TypServicOffrOrgProf }}</td>
+                           <td>{{ stud.FourniIntranMatTrans }}</td>
+                           <td>{{ stud.SitTransform }}</td>
+                           <td>{{ stud.MatEquipTransExist }}</td>
+                           
+                           <td>{{ stud.TypProdTransfPeriod }}</td>
+                           <td>{{ stud.SourcApproIntranMatTA }}</td>
+                           <td>{{ stud.QteProdPeriodTA }}</td>
+                           <td>{{ stud.QteProdTypeTA }}</td>
+                           <td>{{ stud.TauxTransformArtisan }}</td>
+                             <td>{{ stud.date}}</td>
+                             <td>{{ stud.date_modification }}</td>
 
                             
                             <td class="text-right">
@@ -149,8 +109,7 @@
           </div>
        </div>
     </div>
- </div>
-    </div>
+ 
     
  </div>
  {% endblock %}	

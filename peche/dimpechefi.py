@@ -5,6 +5,11 @@ from django import forms
 
 class DPFI(ModelForm):
 
+    codeCommune   = forms.CharField(label='Code Commune',widget=forms.NumberInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    nomCommune  = forms.CharField(label='Nom Commune ',widget=forms.TextInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+   
     OffrServicFinancPech = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
     DemandApportPech = forms.CharField(widget=forms.TextInput(
@@ -17,8 +22,11 @@ class DPFI(ModelForm):
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
     DelaiRemboursMinMax = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-
+    date = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 800px;', 'class': 'form-control'}))
+    date_modification = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 800px;', 'class': 'form-control'}))
     class Meta:
         model = DimPecheFinance
-        fields = ['OffrServicFinancPech', 'DemandApportPech', 'TypGaranExige',
-                  'LongProcedCredi', 'TauInteret', 'DelaiRemboursMinMax']
+        fields = ['codeCommune' ,'nomCommune' ,'OffrServicFinancPech', 'DemandApportPech', 'TypGaranExige',
+                  'LongProcedCredi', 'TauInteret', 'DelaiRemboursMinMax','date','date_modification']

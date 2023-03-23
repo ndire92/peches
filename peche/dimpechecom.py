@@ -5,24 +5,45 @@ from django import forms
 
 class DPC(ModelForm):
 
-    ProdVendType = forms.CharField(widget=forms.NumberInput(
+    codeCommune   = forms.CharField(label='Code Commune',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    ProdVendCampgnHiver = forms.CharField(widget=forms.NumberInput(
+    nomCommune  = forms.CharField(label='Nom Commune ',widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    ProdVendCampgnInterSais = forms.CharField(widget=forms.NumberInput(
+    ProdVendType   = forms.DecimalField( label='Production vendue (en tonne) par type de produit: ',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    ProdVendCampSaisFroid = forms.CharField(widget=forms.NumberInput(
+    ProdVendCampgnInterSais   = forms.DecimalField(label='Production vendue (en tonne) par campagne Inter-saison (Looly)',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    ProdVendCampPrintem = forms.CharField(widget=forms.NumberInput(
+    ProdVendCampgnHiver   = forms.DecimalField(label='Production vendue (en tonne) par campagne Hivernage (saison chaude):',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    Type_VentPech = forms.CharField(widget=forms.TextInput(
+    ProdVendCampSaisFroid   = forms.DecimalField(label='Production vendue (en tonne) par campagne Saison froide (Nör):',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    Mod_ecoulement = forms.CharField(widget=forms.TextInput(
+    ProdVendCampPrintem   = forms.DecimalField(label='Production vendue (en tonne) par campagne Printemps (Thiorone-inter-saison):',widget=forms.NumberInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-    ClientPech = forms.CharField(widget=forms.TextInput(
+    Type_VentPech  = forms.CharField(label='Type de vente',widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    PriVentMoy_Prod  = forms.CharField(label='Prix Vendre Moyenne Pro',widget=forms.NumberInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    Mod_ecoulement  = forms.CharField(label='Mode d’écoulement',widget=forms.TextInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    ClientPech  = forms.CharField(label='Client Peche',widget=forms.TextInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    
+    date = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 300px;', 'class': 'form-control'}))
+    date_modification = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 300px;', 'class': 'form-control'}))  
+
 
     class Meta:
         model = DimPecheCommerce
-        fields = ['ProdVendType', 'ProdVendCampgnHiver', 'ProdVendCampgnInterSais',
-                  'ProdVendCampSaisFroid', 'ProdVendCampPrintem', 'Type_VentPech', 'Mod_ecoulement', 'ClientPech']
+        fields = ['codeCommune',
+                    'nomCommune',
+                    'ProdVendType',
+                    'ProdVendCampgnInterSais',
+                    'ProdVendCampgnHiver',
+                    'ProdVendCampSaisFroid',
+                    'ProdVendCampPrintem',
+                    'Type_VentPech',
+                    'PriVentMoy_Prod',
+                    'Mod_ecoulement',
+                    'ClientPech','date','date_modification']

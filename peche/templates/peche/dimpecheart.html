@@ -16,155 +16,10 @@
 
                      {% include 'includes/messages.html' %}	
 
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Acteur Peche Artisanale</label>
-                           {{ form.ActPech_Artisan }}</div>
-                     </div>
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Groupements de pêcheurs </label>
-                           {{ form.GroupPecheur }}</div>
-                     </div>
-                     <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Groupements de mareyeurs:</label>
-                           {{ form.GroupMareyeur }} </div>
-                     </div>
-                   <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de pirogue: </label>
-                           {{ form.TypePirogu }}
-                          </div>
-                     </div>
-                    <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits pêchés par pirogue en bois: </label>
-                           {{ form.TypProdPechPirogBois }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits pêchés par pirogue en  fibre de verre:</label>
-                           {{ form.TypProdPechPirogFibr }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits pêchés par pirogue en aluminium: </label>
-                           {{ form.TypProdPechPirogAlumin }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits halieutiques en Hiver:</label>
-                           {{ form.TypeProdHalieuHiver}}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits halieutiques en InterSaison:</label>
-                           {{ form.TypeProdHalieuInterSaison}}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits halieutiques en Saison froide:</label>
-                           {{ form.TypeProdHalieuSaisFroid }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Type de produits halieutiques en Primptemps:</label>
-                           {{ form.TypeProdHalieuPrimptem }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Intrants Peche:</label>
-                           {{ form.IntrantPech }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Matériels utilisés </label>
-                           {{ form.MatUtilisePech }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Sources d’approvisionnement en intrants:</label>
-                           {{ form.SourcApprovis_Intran }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Sources d’approvisionnement en matériels:</label>
-                           {{ form.SourcApprovis_Materiel }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de capture moyenne par sortie en période Hivernage (saison chaude): </label>
-                           {{ form.NivCaptMoyenHiver }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de capture moyenne par sortie en période Inter-saison (Looly):</label>
-                           {{ form.NivCaptMoyenInterSaison }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de capture moyenne par sortie en période Saison froide (Nör):</label>
-                           {{ form.NivCaptMoyenSaisFroid }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de capture moyenne par sortie en période Printemps (Thiorone-inter-saison):</label>
-                           {{ form.NivCaptMoyenPrintem }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture - (par période) en Hivernage (saison chaude):</label>
-                           {{ form.NivCaptMoyenSortTypProd }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture - (par période) en Inter-saison (Looly):</label>
-                           {{ form.NivPertPostCaptHiver }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture - (par période) en Saison froide (Nör):</label>
-                           {{ form.NivPertPostCaptInterSaison }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture - (par période) en :</label>
-                           {{ form.NivPertPostCaptSaisFroid }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture - (par période) en Printemps (Thiorone-inter-saison):</label>
-                           {{ form.NivPertPostCaptPrintem }}
-                          </div>
-                     </div>
-					 <div class="col-sm-11">
-                        <div class="form-group">
-                           <label>Niveau de pertes post capture par type de produit:</label>
-                           {{ form.NivPertPostCaptTypProd }}
-                          </div>
-                     </div>
-                 
-            </div>
+                    
+                           {{ form.as_p}}</div>
+                    
+        
                   
                    <br>
                      <div class="col-12">
@@ -191,31 +46,47 @@
                   <table id="table_id" class="table table-hover table-center mb-0">
                      <thead>
                         <tr>
-                           <th>IdPechArtisan_PK</th>
-                           <th>ActPech_Artisan</th>
-                           <th>GroupPecheur</th>
-                           <th>GroupMareyeur</th>
-                           <th>TypePirogu</th>
-                           <th>TypProdPechPirogBois</th>
-                           <th>TypProdPechPirogFibr</th>
-                           <th>TypProdPechPirogAlumin</th>
-                           <th>TypeProdHalieuHiver</th>
-                           <th>TypeProdHalieuInterSaison</th>
-                           <th>TypeProdHalieuSaisFroid</th>
-                           <th>TypeProdHalieuPrimptem</th>
-                           <th>IntrantPech</th>
-                           <th>MatUtilisePech</th>
-                           <th>SourcApprovis_Intran</th>
-                           <th>SourcApprovis_Materiel</th>
-                           <th>NivCaptMoyenHiver</th>
-                           <th>NivCaptMoyenInterSaison</th>
-                           <th>NivCaptMoyenPrintem</th>
-                           <th>NivCaptMoyenSortTypProd</th>
-                           <th>NivPertPostCaptHiver</th>
-                           <th>NivPertPostCaptInterSaison</th>
-                           <th>NivPertPostCaptSaisFroid</th>
-                           <th>NivPertPostCaptPrintem</th>
-                           <th>NivPertPostCaptTypProd</th>
+                           <th>Id</th>
+                           <th>codeCommune</th>
+                           <th>nomCommune</th>
+                           <th>ActPech_Artisan </th>
+                           <th>NbrActeur</th>
+                           <th>GroupPecheur </th>
+                           <th>NbreGIEPecheur</th>
+                           <th>NbrOrganiProfessPecheur</th>
+                           <th>Nbr_AssociatPecheur</th>
+                           <th>GroupMareyeur </th>
+                           <th>NbreGIEMarey</th>
+                           <th>NbrOrganiProfessMarey</th>
+                           <th>Nbr_AssociatMarey</th>
+                           <th>NbreQuaiPech</th>
+                           <th>TypePirogu </th>
+                           <th>TypProdPechPirogBois </th>
+                           <th>TypProdPechPirogFibr </th>
+                           <th>TypProdPechPirogAlumin </th>
+                           <th>TypeProdHalieuHiver </th>
+                           
+                           <th>TypeProdHalieuInterSaison </th>
+                           <th>TypeProdHalieuSaisFroid </th>
+                           <th>TypeProdHalieuPrimptem </th>
+                           <th>IntrantPech </th>
+                           <th>MatUtilisePech </th>
+                           <th>SourcApprovis_Intran </th>
+                           <th>SourcApprovis_Materiel </th>
+                           <th>Qteannuel_debarq</th>
+                           <th>NivCaptMoyenHiver </th>
+                           <th>NivCaptMoyenInterSaison </th>
+                           <th>NivCaptMoyenSaisFroid </th>
+                           <th>NivCaptMoyenPrintem </th>
+                           <th>NivCaptMoyenSortTypProd </th>
+                           <th>NivPertPostCaptHiver </th>
+                           <th>NivPertPostCaptInterSaison </th>
+                           <th>NivPertPostCaptSaisFroid </th>
+                           <th>NivPertPostCaptPrintem </th>
+                           <th>NivPertPostCaptTypProd </th>
+                           
+                           <th>date</th>
+                           <th>date_modification</th>
                            
                            <th class="text-right">Action</th>
                         </tr>
@@ -223,58 +94,47 @@
                      <tbody>
                         {% for stud in dataObject %}
                         <tr>
-                         
-                           <td>{{ stud.IdPechArtisan_PK }}</td>
-						   
-                           <td>{{ stud.ActPech_Artisan }}</td>
-
-                           <td>{{ stud.GroupPecheur }}</td>
-
-                           <td>{{ stud.GroupMareyeur }}</td>
-
-                           <td>{{ stud.TypePirogu }}</td>
-						   
-                           <td>{{ stud.TypProdPechPirogBois }}</td>
-						   
-                           <td>{{ stud.IdAgroAssurance_FK }}</td>
-						   
-                           <td>{{ stud.TypProdPechPirogAlumin }}</td>
-						   
-                           <td>{{ stud.TypeProdHalieuHiver }}</td>
-						   
-                           <td>{{ stud.TypeProdHalieuInterSaison }}</td>
-						   
-                           <td>{{ stud.TypeProdHalieuSaisFroid }}</td>
-						   
-                           <td>{{ stud.TypeProdHalieuPrimptem }}</td>
-						   
-                           <td>{{ stud.IntrantPech }}</td>
-						   
-                           <td>{{ stud.MatUtilisePech }}</td>
-						   
-                           <td>{{ stud.SourcApprovis_Intran }}</td>
-						   
-                           <td>{{ stud.SourcApprovis_Materiel }}</td>
-						   
-                           <td>{{ stud.NivCaptMoyenHiver }}</td>
-						   
-                           <td>{{ stud.NivCaptMoyenInterSaison }}</td>
-						   
-                           <td>{{ stud.NivCaptMoyenSaisFroid }}</td>
-						   
-                           <td>{{ stud.NivCaptMoyenPrintem }}</td>	
-						   
-                           <td>{{ stud.NivCaptMoyenSortTypProd }}</td>	
-						   
-                           <td>{{ stud.NivPertPostCaptHiver }}</td>	
-						   
-                           <td>{{ stud.NivPertPostCaptInterSaison }}</td>	
-						   
-                           <td>{{ stud.NivPertPostCaptSaisFroid }}</td>	
-						   
-                           <td>{{ stud.NivPertPostCaptPrintem }}</td>
-						   
-                           <td>{{ stud.NivPertPostCaptTypProd }}</td>		
+                          
+                           <td>{{ stud.id}}</td>
+                           <td>  {{ stud.codeCommune }}</td>
+                           <td>{{ stud.nomCommune  }}</td>
+                           <td>{{ stud.ActPech_Artisan  }}</td>
+                           <td>{{ stud.NbrActeur }}</td>
+                           <td>{{ stud.GroupPecheur  }}</td>
+                           <td>{{ stud.NbreGIEPecheur }}</td>
+                           <td>{{ stud.NbrOrganiProfessPecheur }}</td>
+                           <td>{{ stud.Nbr_AssociatPecheur }}</td>
+                           <td>{{ stud.GroupMareyeur  }}</td>
+                           <td>{{ stud.NbreGIEMarey }}</td>
+                           <td>{{ stud.NbrOrganiProfessMarey }}</td>
+                           <td>{{ stud.Nbr_AssociatMarey }}</td>
+                           <td>{{ stud.NbreQuaiPech }}</td>
+                           <td>{{ stud.TypePirogu  }}</td>
+                           <td>{{ stud.TypProdPechPirogBois  }}</td>
+                           <td>{{ stud.TypProdPechPirogFibr  }}</td>
+                           <td>{{ stud.TypProdPechPirogAlumin  }}</td>
+                           <td>{{ stud.TypeProdHalieuHiver  }}</td>
+                           <td>{{ stud.TypeProdHalieuInterSaison  }}</td>
+                           <td>{{ stud.TypeProdHalieuSaisFroid  }}</td>
+                           <td>{{ stud.TypeProdHalieuPrimptem  }}</td>
+                           <td>{{ stud.IntrantPech  }}</td>
+                           <td>{{ stud.MatUtilisePech  }}</td>
+                           <td>{{ stud.SourcApprovis_Intran  }}</td>
+                           <td>{{ stud.SourcApprovis_Materiel  }}</td>
+                           <td>{{ stud.Qteannuel_debarq }}</td>
+                           <td>{{ stud.NivCaptMoyenHiver  }}</td>
+                           <td>{{ stud.NivCaptMoyenInterSaison  }}</td>
+                           <td>{{ stud.NivCaptMoyenSaisFroid  }}</td>
+                           <td>{{ stud.NivCaptMoyenPrintem  }}</td>
+                           <td>{{ stud.NivCaptMoyenSortTypProd  }}</td>
+                           <td>{{ stud.NivPertPostCaptHiver  }}</td>
+                           <td>{{ stud.NivPertPostCaptInterSaison  }}</td>
+                           <td>{{ stud.NivPertPostCaptSaisFroid  }}</td>
+                           <td>{{ stud.NivPertPostCaptPrintem  }}</td>
+                           <td>{{ stud.NivPertPostCaptTypProd  }}</td>
+                           
+                           <td>{{ stud.date }}</td>
+                           <td>{{ stud.date_modification }}</td>	
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_ar' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -294,8 +154,7 @@
          </div>
       </div>
    </div>
-</div>
-   </div>
+
    
 </div>
 {% endblock %}	

@@ -4,6 +4,11 @@ from django import forms
 
 
 class pectafina(ModelForm):
+    codeCommune = forms.CharField(widget=forms.NumberInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    nomCommune = forms.CharField(widget=forms.TextInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+   
 
     OffrServicFinancTA = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
@@ -13,12 +18,19 @@ class pectafina(ModelForm):
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
     LongProcedCrditTA = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
+    MontanMoyTA = forms.DecimalField(widget=forms.NumberInput(
+        attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
     TauInterTA = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
     DelaiRemboursMinMaxTA = forms.CharField(widget=forms.TextInput(
         attrs={'placeholder': '', 'style': 'width: 800px;', 'class': 'form-control'}))
-
+    date = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 300px;', 'class': 'form-control'}))
+    date_modification = forms.CharField(widget=forms.DateInput(
+        attrs={'type': 'date', 'style': 'width: 300px;', 'class': 'form-control'}))
+    
+    
     class Meta:
         model = DimPechTAFinance
-        fields = ['OffrServicFinancTA', 'DemandApportTA', 'TypGaranExigeTA',
-                  'LongProcedCrditTA', 'TauInterTA', 'DelaiRemboursMinMaxTA']
+        fields = ['codeCommune','nomCommune','OffrServicFinancTA', 'DemandApportTA', 'TypGaranExigeTA',
+                  'LongProcedCrditTA','MontanMoyTA', 'TauInterTA', 'DelaiRemboursMinMaxTA','date','date_modification']

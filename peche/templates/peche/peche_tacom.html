@@ -16,7 +16,17 @@
                      </div>
 
                      {% include 'includes/messages.html' %}	
-
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Code Commune :</label>
+                           {{ form.codeCommune}}</div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Nom Commune</label>
+                           {{ form.nomCommune}}
+                        </div>
+                     </div>
                      <div class="col-sm-11">
                         <div class="form-group">
                            <label>Production vendue par type de produit – par campagne : </label>
@@ -26,20 +36,37 @@
                         <div class="form-group">
                            <label>Type de vente TA :</label>
                            {{ form.TypVentTA }}</div>
-                     </div>                 
-					 <div class="col-sm-11">
+                     </div>    
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Prix Vent Moyenne ProdTA :</label>
+                           {{ form.PrixVentMoyProdTA }}</div>
+                     </div>             
+					      <div class="col-sm-11">
                         <div class="form-group">
                            <label>Mode d’écoulement transformation artisanale: </label>
                            {{ form.ModEcoulmtTA }}
                           </div>
                      </div>
-					 <div class="col-sm-11">
+					     <div class="col-sm-11">
                         <div class="form-group">
                            <label>Clients Transformations artisanale :</label>
                            {{ form.ClientTA}}
                           </div>
                      </div>				 	 
-		 
+                     <div class="col-sm-11">
+                        <div class="form-group">
+   
+                           <label>Date Début</label>
+                           {{ form.datet}}
+                          </div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Date de Modification</label>
+                           {{ form.date_modification }}
+                          </div>
+                     </div>
             </div>
                   
                    <br>
@@ -67,11 +94,16 @@
                   <table id="table_id" class="table table-hover table-center mb-0">
                      <thead>
                         <tr>
-                           <th>IdPechTAComm_PK</th>
+                           <th>Id</th>
+                           <th>codeCommune</th>
+                           <th>nomCommune</th>
                            <th>ProdVenduCampagTA</th>
                            <th>TypVentTA</th>
+                           <th>PrixVentMoyProdTA</th>
                            <th>ModEcoulmtTA</th>
                            <th>ClientTA</th>
+                            <th>Date Début</th>
+                           <th>Date de Modification</th>
 
                            <th class="text-right">Action</th>
                         </tr>
@@ -80,15 +112,20 @@
                         {% for stud in dataObject %}
                         <tr>
                          
-                           <td>{{ stud.IdPechTAComm_PK }}</td>
+                           <td>{{ stud.id}}</td>
+                           <td>{{ stud.codeCommune }}</td>
+
+                           <td>{{ stud.nomCommune }}</td>
 						   
                            <td>{{ stud.ProdVenduCampagTA }}</td>
 
                            <td>{{ stud.TypVentTA }}</td>
-
+                           <td>{{ PrixVentMoyProdTA }}</td>
                            <td>{{ stud.ModEcoulmtTA }}</td>
 
-                           <td>{{ stud.ClientTA }}</td>       		
+                           <td>{{ stud.ClientTA }}</td>  
+                           <td>{{ stud.datet}}</td>
+                           <td>{{ stud.date_modification }}</td>     		
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_tc' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -108,8 +145,7 @@
          </div>
       </div>
    </div>
-</div>
-   </div>
+
    
 </div>
 {% endblock %}	

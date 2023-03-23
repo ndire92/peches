@@ -15,6 +15,16 @@
                      </div>
 
                      {% include 'includes/messages.html' %}	
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Code Commune</label>
+                           {{ form.codeCommune}}</div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Nom Commune:</label>
+                           {{ form.nomCommune  }}</div>
+                     </div>
 
                      <div class="col-sm-11">
                         <div class="form-group">
@@ -37,6 +47,12 @@
                            {{ form.LongProcedCrditTA}}
                           </div>
                      </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Montant MoyenneTA :</label>
+                           {{ form.MontanMoyTA}}
+                          </div>
+                     </div>
                     <div class="col-sm-11">
                         <div class="form-group">
                            <label>Taux d’intérêt TA:</label>
@@ -48,7 +64,20 @@
                            <label>Délai de remboursement TA </label>
                            {{ form.DelaiRemboursMinMaxTA }}
                           </div>
-                     </div>				 
+                     </div>	
+                     <div class="col-sm-11">
+                        <div class="form-group">
+   
+                           <label>Date Début</label>
+                           {{ form.date}}
+                          </div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Date de Modification</label>
+                           {{ form.date_modification }}
+                          </div>
+                     </div>			 
             </div>
                   
                    <br>
@@ -60,8 +89,7 @@
             </div>
          </div>
       </div>
-      
-<div >
+
  <div class="content container-fluid">
    <div class="page-header">
       <div class="row align-items-center">
@@ -77,12 +105,17 @@
                      <thead>
                         <tr>
                            <th>Id</th>
+                           <th>codeCommune</th>
+                           <th>nomCommune</th>
                            <th>OffrServicFinancTA</th>
                            <th>DemandAportTA</th>
                            <th>TypGaranExigTA</th>
                            <th>LongrProcCditTA</th>
+                           <th>MontanMoyTA</th>
                            <th>TauInterTA</th>
                            <th>DelaiRemboursMinMaxTA</th>
+                           <th>Date Début</th>
+                           <th>Date de Modification</th>
                            <th class="text-right">Action</th>
                         </tr>
                      </thead>
@@ -90,8 +123,9 @@
                         {% for stud in dataObject %}
                         <tr>
                          
-                           <td>{{ stud.Id }}</td>
-						   
+                           <td>{{ stud.id }}</td>
+                           <td>{{ stud.codeCommune }}</td>
+                           <td>{{ stud.nomCommune }}</td>
                            <td>{{ stud.OffrServicFinancTA }}</td>
 
                            <td>{{ stud.DemandApportTA}}</td>
@@ -99,10 +133,12 @@
                            <td>{{ stud.TypGaranExigeTA }}</td>
 
                            <td>{{ stud.LongProcedCrditTA }}</td>
-						   
+                           <td>{{ stud.MontanMoyTA }}</td>
                            <td>{{ stud.TauInterTA }}</td>
 						   
-                           <td>{{ stud.DelaiRemboursMinMaxTA }}</td>                       				
+                           <td>{{ stud.DelaiRemboursMinMaxTA }}</td>    
+                           <td>{{ stud.date }}</td>
+                           <td>{{ stud.date_modification }}</td>                   				
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_fi' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -123,7 +159,7 @@
       </div>
    </div>
 </div>
-   </div>
+
    
-</div>
+
 {% endblock %}	

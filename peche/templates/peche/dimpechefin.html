@@ -15,6 +15,16 @@
                      </div>
 
                      {% include 'includes/messages.html' %}	
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Code Commune</label>
+                           {{ form.codeCommune}}</div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Nom Commune:</label>
+                           {{ form.codeCommune  }}</div>
+                     </div>
 
                      <div class="col-sm-11">
                         <div class="form-group">
@@ -48,7 +58,20 @@
                            <label>Délai de remboursement  </label>
                            {{ form.DelaiRemboursMinMax }}
                           </div>
-                     </div>				 
+                     </div>	
+                     <div class="col-sm-11">
+                        <div class="form-group">
+   
+                           <label>Date Début</label>
+                           {{ form.date}}
+                          </div>
+                     </div>
+                     <div class="col-sm-11">
+                        <div class="form-group">
+                           <label>Date de Modification</label>
+                           {{ form.date_modification }}
+                          </div>
+                     </div>			 
             </div>
                   
                    <br>
@@ -77,32 +100,35 @@
                      <thead>
                         <tr>
                            <th>IdPechFinance_PK</th>
+                           <th>codeCommune</th>
+                           <th>nomCommune</th>
                            <th>OffrServicFinancPech</th>
                            <th>DemandApportPech</th>
                            <th>TypGaranExige</th>
                            <th>LongProcedCredi</th>
                            <th>TauInteret</th>
                            <th>DelaiRemboursMinMax</th>
+                           <th>Date Début</th>
+                           <th>Date de Modification</th>
                            <th class="text-right">Action</th>
                         </tr>
                      </thead>
                      <tbody>
                         {% for stud in dataObject %}
                         <tr>
-                         
-                           <td>{{ stud.IdPechFinance_PK }}</td>
+                           
+                           <td>{{ stud.id}}</td>
 						   
+                           <td>{{ stud.codeCommune }}</td>
+                           <td>{{ stud.nomCommune }}</td>
                            <td>{{ stud.OffrServicFinancPech }}</td>
-
                            <td>{{ stud.DemandApportPech }}</td>
-
                            <td>{{ stud.TypGaranExige }}</td>
-
                            <td>{{ stud.LongProcedCredi }}</td>
-						   
                            <td>{{ stud.TauInteret }}</td>
-						   
-                           <td>{{ stud.DelaiRemboursMinMax }}</td>                       				
+                           <td>{{ stud.DelaiRemboursMinMax }}</td> 
+                           <td>{{ stud.date}}</td>
+                           <td>{{ stud.date_modification }}</td>                    				
                            <td class="text-right">
                               <div class="actions">
                                  <a href="{% url 'peche:up_fin' stud.id %}" class="btn btn-sm bg-success-light mr-2">
@@ -121,8 +147,6 @@
             </div>
          </div>
       </div>
-   </div>
-</div>
    </div>
    
 </div>
