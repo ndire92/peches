@@ -6,7 +6,7 @@
        <div class="page-header">
           <div class="row">
              <div class="col-sm-12">
-                <h3 class="page-title">Bienvenu&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{ user.first_name}} {{ user.last_name}}&nbsp; &nbsp;&nbsp;&nbsp;Sur Votre Tableau de Peche</h3>
+                <h3 class="page-title">Bienvenue&nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;{{user.username}} &nbsp; &nbsp;&nbsp;&nbsp;à Joal Fathdiou</h3>
                 <ul class="breadcrumb">
                    <li class="breadcrumb-item active"></li>
                 </ul>
@@ -27,7 +27,45 @@
                 </div>
              </div>
           </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-
+          <div>
+           <div class="card bg-one w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                      
+                      <div class="db-info">
+                         <h3>{{tafina}}</h3>
+                         <h6>Peche TAFinance</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<div>
+             <div class="card bg-one w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                      
+                      <div class="db-info">
+                         <h3>{{passura}}</h3>
+                         <h6>Peche assurance</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <div>
+             <div class="card bg-one w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                      
+                      <div class="db-info">
+                         <h3>{{tassur}}</h3>
+                         <h6>Peche TAassurance</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div>
              <div class="card bg-two w-100">
                 <div class="card-body">
@@ -36,6 +74,19 @@
                       <div class="db-info">
                          <h3>{{pcom}}</h3>
                          <h6>Peche Commerce</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>&nbsp;&nbsp;
+          <div>
+             <div class="card bg-two w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                   
+                      <div class="db-info">
+                         <h3>{{tcom}}</h3>
+                         <h6>Peche TACommerce</h6>
                       </div>
                    </div>
                 </div>
@@ -53,7 +104,20 @@
                    </div>
                 </div>
              </div>
-          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div>
+             <div class="card bg-three w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                     
+                      <div class="db-info">
+                         <h3>{{tart}}</h3>
+                         <h6>transformation Pêche</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           <div >
              <div class="card bg-four w-100">
                 <div class="card-body">
@@ -66,8 +130,20 @@
                    </div>
                 </div>
              </div>
+          </div>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+           <div >
+             <div class="card bg-four w-100">
+                <div class="card-body">
+                   <div class="db-widgets d-flex justify-content-between align-items-center">
+                     
+                      <div class="db-info">
+                         <h3>{{taino}}</h3>
+                         <h6>Peche TAInnovation</h6>
+                      </div>
+                   </div>
+                </div>
+             </div>
           </div>
-          
        </div>
 
 
@@ -121,31 +197,9 @@
           </div>
        </div>
 
-       <div class="row">
-         <div class="col-md-12 col-lg-6">
-            <div class="card card-chart">
-               <div class="card-header">
-                  <div class="row align-items-center">
-                     <div class="col-6">
-                        <h5 class="card-title"></h5>
-                     </div>
-                     <div class="col-6">
-                        <ul class="list-inline-group text-right mb-0 pl-0">
-                           <li class="list-inline-item">
-                              <div class="form-group mb-0 amount-spent-select">
-                                 
-                              </div>
-                           </li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <div class="card-body">
-                  <div id="all"></div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-12 col-lg-6">
+       
+
+          
             <div class="card card-chart">
                <div class="card-header">
                   <div class="row align-items-center">
@@ -167,8 +221,7 @@
                   <div id="c"></div>
                </div>
             </div>
-         </div>
-      </div>
+        
     </div>
     {% include 'includes/chart.html'%}
     {% endblock %}

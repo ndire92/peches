@@ -40,9 +40,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'app',
     'active_link',
-    'home',
+    #'home',
     'peche',
-    
     'fontawesomefree',
 ]
 
@@ -81,21 +80,21 @@ WSGI_APPLICATION = 'Stud.wsgi.application'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#databases
 
 DATABASES = {
-   'default': {
-       'ENGINE': 'django.db.backends.sqlite3',
-       'NAME': BASE_DIR / 'db.sqlite3',
-   }
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
 }
-#DATABASES = {
-    #'default': {
-   #     'ENGINE': 'django.db.backends.mysql',
-  #      'NAME': 'peche',
-  #      'USER': 'root',
-  #      'PASSWORD': 'root',
-   #     'HOST':'localhost',
-    #    'PORT':'3306',
- #   }
-#}
+# DATABASES = {
+#  'default': {
+#     'ENGINE': 'django.db.backends.mysql',
+#     'NAME': 'peche',
+#      'USER': 'root',
+#      'PASSWORD': 'root',
+#      'HOST': 'localhost',
+#     'PORT': '3306',
+# }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -104,6 +103,7 @@ AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
     },
+    
     {
         'NAME': 'django.contrib.auth.password_validation.MinimumLengthValidator',
     },
@@ -143,5 +143,13 @@ STATICFILES_DIRS = [
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+AUTHENTICATION_BACKENDS = [
+    'django.contrib.auth.backends.ModelBackend',
+    'django.contrib.auth.backends.AllowAllUsersModelBackend',
+]
+AUTH_USER_MODEL = 'auth.User'
 
-AUTH_USER_MODEL = 'app.CustomUser'
+ACCOUNT_AUTHENTICATION_METHOD = 'email'
+ACCOUNT_EMAIL_REQUIRED = True
+ACCOUNT_USERNAME_REQUIRED = False
+
