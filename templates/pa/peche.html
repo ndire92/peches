@@ -4,7 +4,7 @@
 
 
 
-    <title>{% block title%}foncier{%endblock%}</title>
+    <title>{% block title%}peche{%endblock%}</title>
  </script>
 </head>
 
@@ -25,7 +25,24 @@
             <!-- Navbar Start -->
 
             <!-- Navbar End -->
+<div class=" px-2 my-3 row row-cols-sm-12" style="padding-right: 0rem !important;
+	padding-left: 0rem !important;">
 
+		<div class="col-sm-6">
+			<img src="{% static '/imge/abte.png' %}" class="" width="100%" height="100%" alt="About Images">
+		</div>
+
+		<div class="col-sm-6" style="background-color: #258baf" >
+
+					<p class="para" style="color: #fff;
+					align-self: center;
+					font-size: 16px;
+					font-weight: 150">
+
+							La plupart des pays d'Afrique ont progressé au cours des dernières décennies vers la réalisation des ODD. Une grande partie des processus de suivi des progrès vers la réalisation des objectifs de développement durable se sont jusqu'à présent concentrés sur le renforcement des systèmes statistiques nationaux qui fournissent des données pour la prise de décision au niveau national. Les niveaux infranationaux de gouvernance sont des couches importantes à prendre en compte dans la réalisation des objectifs de développement au niveau national, en particulier en Afrique. C'est dans ce contexte que l'APHRC  met en œuvre un projet visant à renforcer les systèmes de données nationaux et infranationaux afin de répondre à la demande et à l'offre de données dans certaines unités infranationales. PRECVARDI est un projet qui porte sur le RENFORCEMENT DES CHAÎNES DE VALEUR DES DONNÉES INFRANATIONALES EN AFRIQUE SUBSAHARIENNE.
+		    </div>
+
+	</div>
             <div>
                 <div class="text-center my-5" style=" color:#258baf">
                     <h1 class="fw-bolder">Bienvenue sur la page de Pêche !</h1>
@@ -55,33 +72,9 @@
 
 
 </html>
-<div class="row justify-content-center patenaires">
-    <h1 style=" color: #258baf;text-align: center;">Nos Partenaires !</h1>
-    <div class="col-sm-2 text-center">
-        <div class="card patenaire-item">
-          <a target="_blank" href=""><img src="{% static 'as/partenaire/igt.png'%}" class="card-img-top" alt=""><br><b></b></a>
-        </div>
-    </div>
-    <div class="col-sm-2 text-center">
-        <div class="card patenaire-item">
-          <a target="_blank" href=""> <img class="card-img-top" src="{% static 'as/partenaire/aphrc.png'%}" alt="APHRC"><br> <b></b></a>
-        </div>
-    </div>
 
-    <div class="col-sm-2 text-center">
-        <div class="card patenaire-item">
-          <a target="_blank" href=""> <img class="card-img-top" src="{% static 'as/partenaire/ensa.jpg'%}" alt=""><br> <b></b></a>
-        </div>
-    </div>
-    
-    
-    
-    
-</div>  
 </div>       
 </body>
 {% endblock %}
-
-
 
 
