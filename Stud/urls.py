@@ -47,11 +47,17 @@ urlpatterns = [
     path('delete_ress/<int:id>/', views.del_ress, name="delete_ress"),
 
 
-    path('all/', views.user_table, name='all'),
-    path('add_profile/', views.ajout_profile, name='add_profile'),
-    path('edit/<int:id>/', views.user_edit, name='edit'),
-    path('delete/<int:id>/', views.delete_user, name='delete'),
-    path('commune', views.co, name='commune'),
+    path('gestionnaire', views.coord, name='gestionnaire'),
+    path('decideur', views.deci, name='decideur'),
+    path('visiteur', views.visit, name='visiteur'),
+    # end login
+    path('profile_list/', views.profile_list, name='profile_list'),
+    path('create_profile/', views.create_profile, name='create_profile'),
+    path('profile_detail/', views.profile_detail, name='profile_detail'),
+    path('update_profile/', views.update_profile, name='update_profile'),
+    path('delete_profile/', views.delete_profile, name='delete_profile'),
+    path('commune', views.commune, name='commune'),
+    path('commune_detail', views.co, name='commune_detail'),
     path('peche/', include('peche.urls')),
 
 
