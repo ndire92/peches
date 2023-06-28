@@ -95,7 +95,11 @@ DATABASES = {
     'PORT': '3306',
 }
 }
-
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'
+SESSION_COOKIE_NAME = 'mysharedsessionid'
+SESSION_COOKIE_DOMAIN = '127.0.0.1'
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 

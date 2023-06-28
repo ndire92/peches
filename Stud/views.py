@@ -43,6 +43,14 @@ def Accueil(request):
     tafina = DimPechTAFinance.objects.all().count()
     tart = DimPechTransformArtisan.objects.all().count()
     nb_visite = Visiteur.objects.all().count()
+    
+    # Vérifie si la clé 'visits' existe dans la session
+    if 'visits' not in request.session:
+        # Si elle n'existe pas, initialise à 0
+        request.session['visits'] = 0
+
+    # Incrémente le nombre de visites
+    request.session['visits'] += 1
 
     context = {
         'peche': peche,
